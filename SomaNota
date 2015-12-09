@@ -8,15 +8,16 @@ javascript:(function(){
 			total = 0;     
 			linha = document.getElementsByTagName("tr")[j];     
 			for(i=1;i<9;i++){         
-			if(!isNaN(parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.','')))){             
-			total = total + parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.',''));         
+				if(!isNaN(parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.','')))){             
+					total = total + parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.',''));         
+				}     
 			}     
-		}     
-	    if(total>=240){cor = "#218530"}
-	    else {cor = "#851D1D"}
-		linha.getElementsByTagName("td")[9].innerHTML = total;
-	    linha.getElementsByTagName("td")[9].style.color = cor; 
+		    if(total>=240){cor = "#218530"}
+			else {cor = "#851D1D"}
+			linha.getElementsByTagName("td")[9].innerHTML = total;
+		    linha.getElementsByTagName("td")[9].style.color = cor; 
+		}
 	} else {
-		alert("As Notas já Foram Somadas!")
+		alert("As notas já foram somadas!")
 	}
-}})();
+})();
