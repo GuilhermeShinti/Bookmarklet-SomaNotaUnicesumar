@@ -9,7 +9,7 @@ javascript:(function(){
 			total = 0;     
 			linha = document.getElementsByTagName("tr")[j];     
 			for(i=1;i<9;i++){  
-				if (!isNaN(parseInt(linha.getElementsByTagName("td")[3].textContent.replace('.','')))) {
+				if (!isNaN(parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.','')))) {
 					switch(i) {
 					    case 3:
 					        if (parseInt(linha.getElementsByTagName("td")[3].textContent.replace('.','')) > parseInt(linha.getElementsByTagName("td")[1].textContent.replace('.',''))) {
