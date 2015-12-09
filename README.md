@@ -1,7 +1,6 @@
 # Bookmarklet-SomaNotaUnicesumar 
 
-```html
-<a href="javascript:(function(){
+[a link](javascript:(function(){
 	linha = document.getElementsByTagName("tr")[4];
 	linha.insertCell(9);
 	linha.getElementsByTagName("td")[9].innerHTML = "TOTAL"
@@ -18,16 +17,4 @@
     else {cor = "#851D1D"}
 	linha.getElementsByTagName("td")[9].innerHTML = total;
     linha.getElementsByTagName("td")[9].style.color = cor; 
-}})();"><button>Arraste ao Favoritos</button></a>
-
-<pre>
-    <div class="container">
-        <div class="block two first">
-            <h2>Your title</h2>
-            <div class="wrap">
-            //Your content
-            </div>
-        </div>
-    </div>
-</pre>
-```
+}})();)
