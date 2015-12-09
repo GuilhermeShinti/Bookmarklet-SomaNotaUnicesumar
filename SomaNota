@@ -8,13 +8,46 @@ javascript:(function(){
 		for(j=5;j<limite+5;j++){     
 			total = 0;     
 			linha = document.getElementsByTagName("tr")[j];     
-			for(i=1;i<9;i++){         
+			for(i=1;i<9;i++){  
+				if (!isNaN(parseInt(linha.getElementsByTagName("td")[3].textContent.replace('.','')))) {
+					switch(i) {
+					    case 3:
+					        if (parseInt(linha.getElementsByTagName("td")[3].textContent.replace('.','')) > parseInt(linha.getElementsByTagName("td")[1].textContent.replace('.',''))) {
+					        	total = total - parseInt(linha.getElementsByTagName("td")[1].textContent.replace('.',''));
+					        } else {
+					        	total = total - parseInt(linha.getElementsByTagName("td")[3].textContent.replace('.',''));
+					        }
+					        break;
+					    case 4:
+					        if (parseInt(linha.getElementsByTagName("td")[4].textContent.replace('.','')) > parseInt(linha.getElementsByTagName("td")[2].textContent.replace('.',''))) {
+					        	total = total - parseInt(linha.getElementsByTagName("td")[2].textContent.replace('.',''));
+					        } else {
+					        	total = total - parseInt(linha.getElementsByTagName("td")[4].textContent.replace('.',''));
+					        }
+					        break;
+					    case 7:
+					        if (parseInt(linha.getElementsByTagName("td")[7].textContent.replace('.','')) > parseInt(linha.getElementsByTagName("td")[5].textContent.replace('.',''))) {
+					        	total = total - parseInt(linha.getElementsByTagName("td")[5].textContent.replace('.',''));
+					        } else {
+					        	total = total - parseInt(linha.getElementsByTagName("td")[7].textContent.replace('.',''));
+					        }
+					        break;
+					    case 8:
+					        if (parseInt(linha.getElementsByTagName("td")[8].textContent.replace('.','')) > parseInt(linha.getElementsByTagName("td")[6].textContent.replace('.',''))) {
+					        	total = total - parseInt(linha.getElementsByTagName("td")[6].textContent.replace('.',''));
+					        } else {
+					        	total = total - parseInt(linha.getElementsByTagName("td")[8].textContent.replace('.',''));
+					        }
+					        break;
+					}
+				};
+				       
+
 				if(!isNaN(parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.','')))){             
-					total = total + parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.',''));         
+					total = total + parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.',''));
 				}     
 			}     
-		    if(total>=240){cor = "#218530"}
-			else {cor = "#851D1D"}
+		    if(total>=240){cor = "#218530"} else {cor = "#851D1D"}
 			linha.getElementsByTagName("td")[9].innerHTML = total;
 		    linha.getElementsByTagName("td")[9].style.color = cor;
 		}
