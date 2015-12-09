@@ -16,5 +16,7 @@ javascript:(function(){
 	    else {cor = "#851D1D"}
 		linha.getElementsByTagName("td")[9].innerHTML = total;
 	    linha.getElementsByTagName("td")[9].style.color = cor; 
+	} else {
+		alert("As Notas já Foram Somadas!")
 	}
 }})();
