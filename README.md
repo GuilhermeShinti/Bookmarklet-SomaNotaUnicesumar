@@ -2,7 +2,7 @@
 
 ## Como usar?
 
-Selecione o código abaixo e arraste aos favoritos, após isso você pode renomear para SomaNotas ou o nome que preferir.
+Selecione o código abaixo e arraste aos favoritos, após isso você pode renomear para o que preferir ou simplesmente usar assim mesmo.
 Ao entrar na página de notas da Unicesumar, clique nele e pronto. As notas estarão todas somadas.
 
 ```
