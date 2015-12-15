@@ -4,6 +4,9 @@ javascript:(function(){
 		linha.insertCell(9);
 		linha.getElementsByTagName("td")[9].innerHTML = "TOTAL"
 		linha.getElementsByTagName("td")[9].style.font = "bold 12px arial";
+                linha.insertCell(10);
+                linha.getElementsByTagName("td")[10].innerHTML = "FALTAM"
+		linha.getElementsByTagName("td")[10].style.font = "bold 12px arial";
 		limite = document.getElementsByTagName("tr").length-8; 
 		for(j=5;j<limite+5;j++){     
 			total = 0;     
@@ -47,9 +50,14 @@ javascript:(function(){
 					total = total + parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.',''));
 				}     
 			}     
+            linha.insertCell(10);
 		    if(total>=240){cor = "#218530"} else {cor = "#851D1D"}
 			linha.getElementsByTagName("td")[9].innerHTML = total;
 		    linha.getElementsByTagName("td")[9].style.color = cor;
+            linha.getElementsByTagName("td")[10].innerHTML = total - 240;
+		    linha.getElementsByTagName("td")[10].style.color = cor;
+		    linha.getElementsByTagName("td")[10].className = "font01";
+            linha.getElementsByTagName("td")[10].setAttribute("align", "right");
 		}
 	} else {
 		alert("As notas já foram somadas!")
