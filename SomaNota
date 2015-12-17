@@ -7,21 +7,21 @@ javascript:(function(){
 			linha.getElementsByTagName("td")[9].innerHTML = "TOTAL"
 			linha.getElementsByTagName("td")[9].style.font = "bold 12px arial";
 	        linha.insertCell(10);
-	        linha.getElementsByTagName("td")[10].innerHTML = "FALTAM"
+	        linha.getElementsByTagName("td")[10].innerHTML = "-F/+S"
 			linha.getElementsByTagName("td")[10].style.font = "bold 12px arial";
 			limite = document.getElementsByTagName("tr").length-8; 
 			function subtrair(num1,num2){
-				if (parseInt(linha.getElementsByTagName("td")[num1].textContent.replace('.','')) > parseInt(linha.getElementsByTagName("td")[num2].textContent.replace('.',''))) {
-		        	total = total - parseInt(linha.getElementsByTagName("td")[num2].textContent.replace('.',''));
+				if (parseFloat(linha.getElementsByTagName("td")[num1].textContent) > parseFloat(linha.getElementsByTagName("td")[num2].textContent)) {
+		        	total = total - parseFloat(linha.getElementsByTagName("td")[num2].textContent);
 		        } else {
-		        	total = total - parseInt(linha.getElementsByTagName("td")[num1].textContent.replace('.',''));
+		        	total = total - parseFloat(linha.getElementsByTagName("td")[num1].textContent);
 		        }
 			}
 			for(j=5;j<limite+5;j++){     
 				total = 0;     
 				linha = document.getElementsByTagName("tr")[j];     
 				for(i=1;i<9;i++){  
-					if (!isNaN(parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.','')))) {
+					if (!isNaN(parseFloat(linha.getElementsByTagName("td")[i].textContent))) {
 						switch(i) {
 						    case 3:
 						    	subtrair(3,1);
@@ -37,15 +37,16 @@ javascript:(function(){
 						        break;
 						}
 					};
-					if(!isNaN(parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.','')))){             
-						total = total + parseInt(linha.getElementsByTagName("td")[i].textContent.replace('.',''));
+					if(!isNaN(parseFloat(linha.getElementsByTagName("td")[i].textContent))){             
+						total = total + parseFloat(linha.getElementsByTagName("td")[i].textContent);
 					}     
 				}     
 	            linha.insertCell(10);
-			    if(total>=240){cor = "#218530"} else {cor = "#851D1D"}
-				linha.getElementsByTagName("td")[9].innerHTML = total;
+			    if(total>=24.0){cor = "#218530"} else {cor = "#851D1D"}
+				linha.getElementsByTagName("td")[9].innerHTML = total.toFixed(1);
 			    linha.getElementsByTagName("td")[9].style.color = cor;
-	            linha.getElementsByTagName("td")[10].innerHTML = total - 240;
+                diferenca = total - 24.0
+	            linha.getElementsByTagName("td")[10].innerHTML = diferenca.toFixed(1);
 			    linha.getElementsByTagName("td")[10].style.color = cor;
 			    linha.getElementsByTagName("td")[10].className = "font01";
 	            linha.getElementsByTagName("td")[10].setAttribute("align", "right");
